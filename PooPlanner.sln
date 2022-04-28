@@ -13,21 +13,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{8A3B4609-38F0-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlannerUI", "PooPlannerUI\PooPlannerUI.csproj", "{C8A5AE0A-637D-4AA5-A4D0-7D92BAD23676}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Food", "Food", "{A401D7A1-5525-47F8-95BC-C40BB58C5E14}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dishes", "Dishes", "{A401D7A1-5525-47F8-95BC-C40BB58C5E14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Medicine", "Medicine", "{B1518B3D-A148-4FBD-AF27-4625B5B74945}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stool", "Stool", "{533C5EC9-1F2D-475A-B3B9-388C7883E94C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Food", "Modules.Food\Modules.Food.csproj", "{B77E608D-77E8-4983-8879-F2623DBB5D89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Dishes", "Modules.Food\Modules.Dishes.csproj", "{B77E608D-77E8-4983-8879-F2623DBB5D89}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Food.Core", "Modules.Food.Core\Modules.Food.Core.csproj", "{7F388C46-4C83-4AEB-B606-6580BC2E170E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Dishes.Core", "Modules.Food.Core\Modules.Dishes.Core.csproj", "{7F388C46-4C83-4AEB-B606-6580BC2E170E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Food.Infrastructure", "Modules.Food.Infrastructure\Modules.Food.Infrastructure.csproj", "{749124DE-CB49-46F2-9D63-10E16B859496}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Dishes.Infrastructure", "Modules.Food.Infrastructure\Modules.Dishes.Infrastructure.csproj", "{749124DE-CB49-46F2-9D63-10E16B859496}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{08AF97E5-29D9-48DC-98BA-EE6E683FE259}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Core", "Shared.Core\Shared.Core.csproj", "{644AD83F-C09C-49C9-8646-38C3312C712D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrastructure", "Shared.Infrastructure\Shared.Infrastructure.csproj", "{0F0FBEF7-E4CA-4E5F-BCE1-B45C0984D67E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{644AD83F-C09C-49C9-8646-38C3312C712D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{644AD83F-C09C-49C9-8646-38C3312C712D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{644AD83F-C09C-49C9-8646-38C3312C712D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0FBEF7-E4CA-4E5F-BCE1-B45C0984D67E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0FBEF7-E4CA-4E5F-BCE1-B45C0984D67E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0FBEF7-E4CA-4E5F-BCE1-B45C0984D67E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0FBEF7-E4CA-4E5F-BCE1-B45C0984D67E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{7F388C46-4C83-4AEB-B606-6580BC2E170E} = {A401D7A1-5525-47F8-95BC-C40BB58C5E14}
 		{749124DE-CB49-46F2-9D63-10E16B859496} = {A401D7A1-5525-47F8-95BC-C40BB58C5E14}
 		{644AD83F-C09C-49C9-8646-38C3312C712D} = {08AF97E5-29D9-48DC-98BA-EE6E683FE259}
+		{0F0FBEF7-E4CA-4E5F-BCE1-B45C0984D67E} = {08AF97E5-29D9-48DC-98BA-EE6E683FE259}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB898491-384E-4B1D-9670-5E61D8812F8B}
