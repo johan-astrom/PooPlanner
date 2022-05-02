@@ -1,4 +1,5 @@
 ﻿using Shared.DataAccess;
+using Shared.DataAccess.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

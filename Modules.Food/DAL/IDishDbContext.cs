@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Modules.Food.Core.Entities;
+using Modules.Food.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modules.Dishes.Core.Abstractions
+namespace Modules.Food.DAL
 {
     public interface IDishDbContext
     {

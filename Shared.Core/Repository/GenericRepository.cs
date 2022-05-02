@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Shared.DataAccess.Interfaces;
-using Shared.Infrastructure.Persistence;
+using Shared.DataAccess.DAL;
 
-namespace Shared.Core.Repository
+namespace Shared.DataAccess.Repository
 {
     internal class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {

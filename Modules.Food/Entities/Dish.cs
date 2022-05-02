@@ -1,6 +1,7 @@
 ﻿using Modules.Food.Entities;
 using Shared.Core;
 using Shared.DataAccess;
+using Shared.DataAccess.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

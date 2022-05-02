@@ -1,4 +1,4 @@
-﻿namespace Shared.DataAccess
+﻿namespace Shared.DataAccess.Entities
 {
     public abstract class EntityBase
     {

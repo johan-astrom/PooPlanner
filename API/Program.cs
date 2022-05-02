@@ -1,4 +1,4 @@
-using Modules.Dishes.Extensions;
+using Modules.Food.Extensions;
 using Shared.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);

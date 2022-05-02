@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modules.Dishes.Controllers
+namespace Modules.Food.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

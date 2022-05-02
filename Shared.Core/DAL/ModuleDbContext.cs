@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.Infrastructure.Persistence
+namespace Shared.DataAccess.DAL
 {
     public abstract class ModuleDbContext : DbContext
     {
