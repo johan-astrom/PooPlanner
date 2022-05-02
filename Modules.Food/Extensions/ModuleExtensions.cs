@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Modules.Dishes.Core.Abstractions;
+using Modules.Dishes.Infrastructure.Persistence;
 using Shared.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
@@ -13,8 +15,9 @@ namespace Modules.Dishes.Extensions
     {
         public static IServiceCollection AddCatalogModule(this IServiceCollection services, IConfiguration configuration)
         {
-            services.
-                AddDishesInfrastructure(configuration);
+            services
+                  .AddDatabaseContext<DishDbContext>(configuration)
+                  .AddScoped<IDishDbContext>(provider => provider.GetService<DishDbContext>());
             return services;
         }
 
