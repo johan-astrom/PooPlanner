@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Shared.Infrastructure.Persistence
 {
-    public abstract class ModuleDbContext : DbContext
+    public class ModuleDbContext : DbContext
     {
-        protected abstract string Schema { get; }
+        protected string? Schema { get; }
         public ModuleDbContext(DbContextOptions options) : base(options)
         {
         }
