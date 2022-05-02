@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shared.DataAccess.Interfaces;
 using Shared.Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shared.Core.Repository
 {
@@ -21,17 +16,17 @@ namespace Shared.Core.Repository
         }
         public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            _context.Add(entity);
         }
 
         public void AddRange(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            _context.AddRange(entities);
         }
 
         public IEnumerable<TEntity> Find(System.Linq.Expressions.Expression<Func<TEntity, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _context.Set<TEntity>().Where(expression);
         }
 
         public IEnumerable<TEntity> GetAll()
@@ -54,9 +49,9 @@ namespace Shared.Core.Repository
             _context.Remove(entityToDelete);
         }
 
-        public void RemoveRange(IEnumerable<long> ids)
+        public void RemoveRange(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            _context.RemoveRange(entities);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Modules.Dishes.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllDishesAsync()
         {
-
+            return Ok();
         }
     }
 }

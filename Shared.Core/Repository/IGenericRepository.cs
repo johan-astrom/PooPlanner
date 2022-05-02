@@ -15,6 +15,6 @@ namespace Shared.DataAccess.Interfaces
         void Add(T entity);
         void AddRange(IEnumerable<T> entities);
         void Remove(long id);
-        void RemoveRange(IEnumerable<long> ids);
+        void RemoveRange(IEnumerable<T> entities);
     }
 }
