@@ -1,4 +1,6 @@
-﻿using Shared.Core;
+﻿using Modules.Food.Entities;
+using Shared.Core;
+using Shared.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,20 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modules.Food.Core.Entities
+namespace Modules.Food.Entities
 {
     public class Dish : EntityBase
     {
+
         [Required]
         public string Name { get; set; }
         public DishSize DishSize { get; set; }
-        public List<String> Allergenes { get; set; }
+        public List<Allergene> Allergenes { get; set; }
 
-        public Dish(string name, DishSize dishSize)
+        public Dish()
         {
-            Name = name;
-            DishSize = dishSize;
-            Allergenes = new List<string>();
+            Allergenes = new List<Allergene>();
         }
     }
 

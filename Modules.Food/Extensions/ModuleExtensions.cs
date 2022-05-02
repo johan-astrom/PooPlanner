@@ -13,7 +13,7 @@ namespace Modules.Dishes.Extensions
 {
     public static class ModuleExtensions
     {
-        public static IServiceCollection AddCatalogModule(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddDishesModule(this IServiceCollection services, IConfiguration configuration)
         {
             services
                   .AddDatabaseContext<DishDbContext>(configuration)

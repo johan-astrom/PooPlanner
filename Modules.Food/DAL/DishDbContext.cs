@@ -12,7 +12,7 @@ namespace Modules.Dishes.Infrastructure.Persistence
 {
     internal class DishDbContext : ModuleDbContext, IDishDbContext
     {
-        public string Schema => "Dish";
+        protected override string Schema => "Dish";
         public DishDbContext(DbContextOptions<DishDbContext> options) : base(options)
         {
         }
