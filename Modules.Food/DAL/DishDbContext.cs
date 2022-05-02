@@ -1,14 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Modules.Dishes.Core.Abstractions;
-using Modules.Food.Core.Entities;
-using Shared.Infrastructure.Persistence;
+using Modules.Food.Entities;
+using Shared.DataAccess.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modules.Dishes.Infrastructure.Persistence
+namespace Modules.Food.DAL
 {
     internal class DishDbContext : ModuleDbContext, IDishDbContext
     {

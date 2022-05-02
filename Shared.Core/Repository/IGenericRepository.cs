@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.DataAccess.Interfaces
+namespace Shared.DataAccess.Repository
 {
     public interface IGenericRepository<T> where T : class
     {
@@ -15,6 +15,6 @@ namespace Shared.DataAccess.Interfaces
         void Add(T entity);
         void AddRange(IEnumerable<T> entities);
         void Remove(long id);
-        void RemoveRange(IEnumerable<long> ids);
+        void RemoveRange(IEnumerable<T> entities);
     }
 }

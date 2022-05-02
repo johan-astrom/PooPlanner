@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.Infrastructure.Persistence
+namespace Shared.DataAccess.DAL
 {
-    public class ModuleDbContext : DbContext
+    public abstract class ModuleDbContext : DbContext
     {
-        protected string? Schema { get; }
+        protected virtual string? Schema { get; }
         public ModuleDbContext(DbContextOptions options) : base(options)
         {
         }

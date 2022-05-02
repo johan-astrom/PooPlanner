@@ -1,8 +1,8 @@
-﻿namespace Shared.Core
+﻿namespace Shared.DataAccess.Entities
 {
     public abstract class EntityBase
     {
-        public virtual long Id { get; protected set; }
+        public long Id { get; protected set; }
 
         protected EntityBase()
         {

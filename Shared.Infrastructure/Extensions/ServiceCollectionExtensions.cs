@@ -8,7 +8,7 @@ namespace Shared.Infrastructure.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddSharedInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddSharedInfrastructure(this IServiceCollection services)
         {
             services.AddControllers()
                 .ConfigureApplicationPartManager(manager =>
