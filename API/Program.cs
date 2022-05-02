@@ -1,5 +1,7 @@
 using Modules.Food.Extensions;
+using Modules.Food.Mapper;
 using Shared.Infrastructure.Extensions;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSharedInfrastructure();
 builder.Services.AddDishesModule(builder.Configuration);
+builder.Services.AddAutoMapper(typeof(FoodProfile));
 
 var app = builder.Build();
 
