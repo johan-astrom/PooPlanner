@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Modules.Food.DAL;
+using Modules.Food.Services;
 using Shared.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,8 @@ namespace Modules.Food.Extensions
         {
             services
                   .AddDatabaseContext<DishDbContext>(configuration)
-                  .AddScoped<IDishDbContext>(provider => provider.GetService<DishDbContext>());
+                  .AddScoped<IDishDbContext>(provider => provider.GetService<DishDbContext>())
+                  .AddScoped<IFoodService, FoodService>();
             return services;
         }
 

@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Modules.Food.DTO;
+using Modules.Food.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +13,16 @@ namespace Modules.Food.Controllers
     [Route("api/[controller]")]
     internal class DishesController : ControllerBase
     {
-        [HttpGet]
-        public async Task<IActionResult> GetAllDishesAsync()
+        private readonly IFoodService _service;
+        public DishesController(IFoodService service)
         {
-            return Ok();
+            _service = service;
+        }
+        [HttpGet]
+        public IActionResult GetDishById(long id)
+        {
+            var dish = _service.GetById(id);
+            return Ok(dish);
         }
     }
 }

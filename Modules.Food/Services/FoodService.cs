@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Modules.Food.Services
 {
-    internal class FoodService
+    internal class FoodService : IFoodService
     {
         private readonly IGenericRepository<Dish> _repository;
         private readonly IMapper _mapper;

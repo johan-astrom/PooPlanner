@@ -2,14 +2,18 @@
 using Microsoft.Extensions.Configuration;
 
 using Microsoft.Extensions.DependencyInjection;
+using Shared.DataAccess.DAL;
+using Shared.DataAccess.Repository;
 using Shared.Infrastructure.Controller;
 
 namespace Shared.Infrastructure.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddSharedInfrastructure(this IServiceCollection services)
+        public static IServiceCollection AddSharedInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddDbContext<ModuleDbContext>(m => m.UseSqlServer(configuration.GetConnectionString("Default")));
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddControllers()
                 .ConfigureApplicationPartManager(manager =>
                 {
@@ -18,7 +22,7 @@ namespace Shared.Infrastructure.Extensions
             return services;
         }
 
-        public static IServiceCollection AddDatabaseContext<T>(this IServiceCollection services, IConfiguration configuration)where T : DbContext
+        public static IServiceCollection AddDatabaseContext<T>(this IServiceCollection services, IConfiguration configuration) where T : DbContext
         {
             var connectionString = configuration.GetConnectionString("Default");
             services.AddMSSQL<T>(connectionString);

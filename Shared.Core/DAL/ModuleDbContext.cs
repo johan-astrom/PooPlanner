@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shared.DataAccess.DAL
 {
-    public abstract class ModuleDbContext : DbContext
-    {
+    public abstract class ModuleDbContext : DbContext { 
         protected virtual string? Schema { get; }
         public ModuleDbContext(DbContextOptions options) : base(options)
         {

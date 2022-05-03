@@ -3,7 +3,7 @@ using Shared.DataAccess.DAL;
 
 namespace Shared.DataAccess.Repository
 {
-    internal class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
         internal ModuleDbContext _context;
         internal DbSet<TEntity> dbSet;

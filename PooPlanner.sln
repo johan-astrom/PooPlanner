@@ -27,6 +27,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.DataAccess", "Shared
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Infrastructure", "Shared.Infrastructure\Shared.Infrastructure.csproj", "{0F0FBEF7-E4CA-4E5F-BCE1-B45C0984D67E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PooPlanner.Domain", "PooPlanner.Domain\PooPlanner.Domain.csproj", "{A4330938-198C-4632-8A18-77635139470C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PooPlanner.Shared", "PooPlanner.Shared\PooPlanner.Shared.csproj", "{CFBF22BD-28D8-48D2-977C-B247BA1997E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PooPlanner.Service", "PooPlanner.Service\PooPlanner.Service.csproj", "{6CA6A13A-19DF-4668-ADFD-3CA609A1452F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +59,18 @@ Global
 		{0F0FBEF7-E4CA-4E5F-BCE1-B45C0984D67E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F0FBEF7-E4CA-4E5F-BCE1-B45C0984D67E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F0FBEF7-E4CA-4E5F-BCE1-B45C0984D67E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4330938-198C-4632-8A18-77635139470C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4330938-198C-4632-8A18-77635139470C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4330938-198C-4632-8A18-77635139470C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4330938-198C-4632-8A18-77635139470C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBF22BD-28D8-48D2-977C-B247BA1997E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBF22BD-28D8-48D2-977C-B247BA1997E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBF22BD-28D8-48D2-977C-B247BA1997E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBF22BD-28D8-48D2-977C-B247BA1997E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA6A13A-19DF-4668-ADFD-3CA609A1452F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA6A13A-19DF-4668-ADFD-3CA609A1452F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA6A13A-19DF-4668-ADFD-3CA609A1452F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA6A13A-19DF-4668-ADFD-3CA609A1452F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
