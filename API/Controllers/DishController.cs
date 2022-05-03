@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modules.Food.Controllers
+namespace PooPlanner.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
