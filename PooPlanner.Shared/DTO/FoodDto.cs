@@ -1,13 +1,6 @@
-﻿using Modules.Food.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Modules.Food.DTO
+﻿namespace PooPlanner.Shared.DTO
 {
-    internal class FoodDto
+    public class FoodDto
     {
         public string? DishName { get; set; }
         public string? DishSize{ get; set; }

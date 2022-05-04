@@ -1,4 +1,5 @@
-
+using PooPlanner.Service.Extensions;
+using PooPlanner.Domain.Extensions;
 using PooPlanner.Shared.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(FoodProfile));
+//Custom extensions for adding services from each layer
+builder.Services.AddDomainLayer(builder.Configuration);
+builder.Services.AddServiceLayer();
 
 var app = builder.Build();
 

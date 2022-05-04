@@ -1,14 +1,6 @@
-﻿using Modules.Food.Entities;
-using Shared.DataAccess;
-using Shared.DataAccess.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Modules.Food.Entities
+namespace PooPlanner.Domain.Entities
 {
     public class Dish : EntityBase
     {

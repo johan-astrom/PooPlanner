@@ -1,21 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using PooPlanner.Shared.Services;
 
-namespace PooPlanner.Api.Controllers
+namespace PooPlanner.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    internal class DishesController : ControllerBase
+    public class DishesController : ControllerBase
     {
         private readonly IFoodService _service;
         public DishesController(IFoodService service)
         {
             _service = service;
         }
-        [HttpGet]
-        public IActionResult GetDishById()
+        [HttpGet("{id}")]
+        public IActionResult GetDishById(long id)
         {
-            var dish = _service.GetById(9);
+            var dish = _service.GetById(id);
             return Ok(dish);
         }
     }

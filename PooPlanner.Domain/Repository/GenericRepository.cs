@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Shared.DataAccess.DAL;
+using PooPlanner.Domain.DataAccess;
 
-namespace Shared.DataAccess.Repository
+namespace PooPlanner.Domain.Repository
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        internal ModuleDbContext _context;
+        internal PooPlannerContext _context;
         internal DbSet<TEntity> dbSet;
 
-        public GenericRepository(ModuleDbContext context)
+        public GenericRepository(PooPlannerContext context)
         {
             _context = context;
             dbSet = _context.Set<TEntity>();

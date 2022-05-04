@@ -1,13 +1,8 @@
 ﻿using AutoMapper;
-using Modules.Food.DTO;
-using Modules.Food.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PooPlanner.Domain.Entities;
+using PooPlanner.Shared.DTO;
 
-namespace Modules.Food.Mapper
+namespace PooPlanner.Shared.Mapper
 {
     public class FoodProfile : Profile
     {

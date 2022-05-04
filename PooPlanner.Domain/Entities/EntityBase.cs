@@ -1,4 +1,5 @@
-﻿namespace Shared.DataAccess.Entities
+﻿namespace PooPlanner.Domain.Entities
+
 {
     public abstract class EntityBase
     {

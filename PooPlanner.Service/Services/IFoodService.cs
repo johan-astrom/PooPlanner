@@ -1,8 +1,8 @@
-﻿using Modules.Food.DTO;
+﻿using PooPlanner.Shared.DTO;
 
-namespace Modules.Food.Services
+namespace PooPlanner.Shared.Services
 {
-    internal interface IFoodService
+    public interface IFoodService
     {
         FoodDto GetById(long id);
     }

@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.DataAccess.Repository
+namespace PooPlanner.Domain.Repository
 {
     public interface IGenericRepository<T> where T : class
     {

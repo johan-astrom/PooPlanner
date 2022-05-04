@@ -1,14 +1,10 @@
-﻿using AutoMapper;
-using Modules.Food.DTO;
-using Modules.Food.Entities;
-using Shared.DataAccess.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using AutoMapper;
+using PooPlanner.Shared.DTO;
+using PooPlanner.Domain.Entities;
+using PooPlanner.Domain.Repository;
 
-namespace Modules.Food.Services
+namespace PooPlanner.Shared.Services
 {
     internal class FoodService : IFoodService
     {
