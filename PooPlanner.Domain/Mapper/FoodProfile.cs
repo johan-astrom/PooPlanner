@@ -9,6 +9,7 @@ namespace PooPlanner.Shared.Mapper
         public FoodProfile()
         {
             CreateMap<Dish, FoodDto>();
+            CreateMap<FoodDto, Dish>();
         }
     }
 }

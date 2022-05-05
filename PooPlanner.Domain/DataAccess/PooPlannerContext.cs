@@ -15,7 +15,6 @@ namespace PooPlanner.Domain.DataAccess
             this.Database.EnsureCreated();  
         }
 
-        public DbSet<Allergene> Allergenes { get; set; }
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Medicine> Medicines { get; set; }
         public DbSet<Stool> Stools { get; set; }

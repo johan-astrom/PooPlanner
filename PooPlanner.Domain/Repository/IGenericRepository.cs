@@ -12,7 +12,7 @@ namespace PooPlanner.Domain.Repository
         T GetById(long id);
         IEnumerable<T> GetAll();
         IEnumerable<T> Find(Expression<Func<T, bool>> expression);
-        void Add(T entity);
+        T Add(T entity);
         void AddRange(IEnumerable<T> entities);
         void Remove(long id);
         void RemoveRange(IEnumerable<T> entities);

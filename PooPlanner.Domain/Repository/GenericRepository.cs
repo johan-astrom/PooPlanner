@@ -13,9 +13,10 @@ namespace PooPlanner.Domain.Repository
             _context = context;
             dbSet = _context.Set<TEntity>();
         }
-        public void Add(TEntity entity)
+        public TEntity Add(TEntity entity)
         {
-            _context.Add(entity);
+            var createdEntity = _context.Add(entity);
+            return createdEntity.Entity;
         }
 
         public void AddRange(IEnumerable<TEntity> entities)

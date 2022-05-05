@@ -9,6 +9,7 @@ namespace PooPlanner.Domain.Entities
         public string Name { get; set; }
         public DishSize DishSize { get; set; }
         public List<Allergene> Allergenes { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
 
         public Dish()
         {
@@ -21,5 +22,12 @@ namespace PooPlanner.Domain.Entities
         Small,
         Medium,
         Large,
+    }
+
+    public enum Allergene
+    {
+        lactose,
+        gluten,
+        nuts
     }
 }

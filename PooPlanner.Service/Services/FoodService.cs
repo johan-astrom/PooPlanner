@@ -16,9 +16,21 @@ namespace PooPlanner.Shared.Services
             _mapper = mapper;
         }
 
+        public IEnumerable<FoodDto> GetAll()
+        {
+            return _mapper.Map<IEnumerable<FoodDto>>(_repository.GetAll());
+        }
+
         public FoodDto GetById(long id)
         {
             return _mapper.Map<FoodDto>(_repository.GetById(id));
+        }
+
+        public long? Create(FoodDto foodDto)
+        {
+            var dish = _mapper.Map<Dish>(foodDto);
+            _repository.Add(dish);
+            return dish.Id;
         }
 
     }
