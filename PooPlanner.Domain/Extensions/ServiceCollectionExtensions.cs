@@ -15,7 +15,9 @@ namespace PooPlanner.Domain.Extensions
     {
         public static IServiceCollection AddDomainLayer(this IServiceCollection services, IConfiguration config)
         {
-            services.AddDbContext<PooPlannerContext>(options => options.UseSqlServer(config.GetConnectionString("Default")));
+            services.AddDbContext<PooPlannerContext>(options => options.UseSqlServer(
+                config.GetConnectionString("Default"), 
+                options => options.EnableRetryOnFailure()));
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             return services;
         }
