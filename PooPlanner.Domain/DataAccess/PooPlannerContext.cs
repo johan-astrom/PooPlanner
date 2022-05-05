@@ -12,7 +12,6 @@ namespace PooPlanner.Domain.DataAccess
     {
         public PooPlannerContext(DbContextOptions<PooPlannerContext> options) : base(options)
         {
-            this.Database.EnsureCreated();  
         }
 
         public DbSet<Dish> Dishes { get; set; }
