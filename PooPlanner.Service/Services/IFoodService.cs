@@ -1,4 +1,5 @@
-﻿using PooPlanner.Shared.DTO;
+﻿using PooPlanner.Domain.Entities;
+using PooPlanner.Shared.DTO;
 
 namespace PooPlanner.Shared.Services
 {
@@ -6,6 +7,6 @@ namespace PooPlanner.Shared.Services
     {
         FoodDto GetById(long id);
         IEnumerable<FoodDto> GetAll();
-        long? Create(FoodDto foodDto);
+        Dish Create(FoodDto foodDto);
     }
 }

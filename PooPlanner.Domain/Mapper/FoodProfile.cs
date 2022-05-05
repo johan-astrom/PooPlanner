@@ -2,14 +2,15 @@
 using PooPlanner.Domain.Entities;
 using PooPlanner.Shared.DTO;
 
-namespace PooPlanner.Shared.Mapper
+namespace PooPlanner.Domain.Mapper
 {
     public class FoodProfile : Profile
     {
         public FoodProfile()
         {
-            CreateMap<Dish, FoodDto>();
             CreateMap<FoodDto, Dish>();
+            CreateMap<string, Allergene>();
+            CreateMap<string, DishSize>();
         }
     }
 }

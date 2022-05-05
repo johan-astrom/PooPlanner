@@ -21,14 +21,15 @@ namespace PooPlanner.API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public IActionResult CreateDish(FoodDto dish)
         {
-            long? id = _service.Create(dish);
-            if (id == null)
+            var createdDish = _service.Create(dish);
+            if (createdDish == null)
             {
                 return BadRequest("Unable to create dish");
             }
-            return CreatedAtAction(nameof(GetDishById), new { Id = id}, dish);
+            return CreatedAtAction(nameof(GetDishById), new { createdDish.Id}, createdDish);
         }
     }
 }

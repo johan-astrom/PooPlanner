@@ -1,6 +1,6 @@
 using PooPlanner.Service.Extensions;
 using PooPlanner.Domain.Extensions;
-using PooPlanner.Shared.Mapper;
+using PooPlanner.Domain.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
