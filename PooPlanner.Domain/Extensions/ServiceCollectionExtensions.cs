@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PooPlanner.Domain.DataAccess;
 using PooPlanner.Domain.Repository;
+using PooPlanner.Domain.UnitsOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace PooPlanner.Domain.Extensions
             services.AddDbContext<PooPlannerContext>(options => options.UseSqlServer(
                 config.GetConnectionString("Default"), 
                 options => options.EnableRetryOnFailure()));
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }
     }

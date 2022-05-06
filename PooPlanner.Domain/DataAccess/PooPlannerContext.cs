@@ -10,9 +10,6 @@ namespace PooPlanner.Domain.DataAccess
 {
     public class PooPlannerContext : DbContext
     {
-        public PooPlannerContext()
-        {
-        }
 
         public PooPlannerContext(DbContextOptions<PooPlannerContext> options) : base(options)
         {

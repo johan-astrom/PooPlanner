@@ -8,9 +8,11 @@ namespace PooPlanner.Domain.Mapper
     {
         public FoodProfile()
         {
-            CreateMap<FoodDto, Dish>();
-            CreateMap<string, Allergene>();
-            CreateMap<string, DishSize>();
+            CreateMap<FoodPostDto, Dish>();
+            CreateMap<Dish, FoodGetDto>();
+            CreateMap<string, Allergene>().ForMember(dest => dest.Name, opt => opt.MapFrom(src => src));
+            CreateMap<Allergene, string>().ForMember(dest => dest, opt => opt.MapFrom(src => src.Name));
+            //CreateMap<string, DishSize>();
         }
     }
 }

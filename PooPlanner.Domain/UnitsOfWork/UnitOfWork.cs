@@ -4,9 +4,9 @@ using PooPlanner.Domain.Repository;
 
 namespace PooPlanner.Domain.UnitsOfWork
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IDisposable, IUnitOfWork
     {
-        private PooPlannerContext _context = new PooPlannerContext();
+        private PooPlannerContext _context;
         private GenericRepository<Dish> _dishRepository;
         private GenericRepository<Stool> _stoolRepository;
         private GenericRepository<Medicine> _medicineRepository;
@@ -14,7 +14,7 @@ namespace PooPlanner.Domain.UnitsOfWork
         {
             get
             {
-                if(this._dishRepository == null)
+                if (this._dishRepository == null)
                 {
                     this._dishRepository = new GenericRepository<Dish>(_context);
                 }
@@ -44,13 +44,18 @@ namespace PooPlanner.Domain.UnitsOfWork
             }
         }
 
+        public UnitOfWork(PooPlannerContext context)
+        {
+            _context = context;
+        }
+
         public void Save()
         {
             _context.SaveChanges();
         }
 
         private bool disposed = false;
-        
+
         protected virtual void Dispose(bool disposing)
         {
             if (!this.disposed)

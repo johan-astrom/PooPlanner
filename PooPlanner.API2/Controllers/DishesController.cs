@@ -13,6 +13,13 @@ namespace PooPlanner.API.Controllers
         {
             _service = service;
         }
+
+        [HttpGet]
+        public IActionResult GetAllDishes()
+        {
+            return Ok(_service.GetAll());
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetDishById(long id)
         {
@@ -22,7 +29,7 @@ namespace PooPlanner.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult CreateDish(FoodDto dish)
+        public IActionResult CreateDish(FoodPostDto dish)
         {
             var createdDish = _service.Create(dish);
             if (createdDish == null)
