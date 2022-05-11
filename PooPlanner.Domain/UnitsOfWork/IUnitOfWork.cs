@@ -8,6 +8,7 @@ namespace PooPlanner.Domain.UnitsOfWork
         GenericRepository<Dish> DishRepository { get; }
         GenericRepository<Medicine> MedicineRepository { get; }
         GenericRepository<Stool> StoolRepository { get; }
+        GenericRepository<Medication> MedicationRepository { get; } 
 
         void Dispose();
         void Save();

@@ -10,6 +10,7 @@ namespace PooPlanner.Domain.UnitsOfWork
         private GenericRepository<Dish> _dishRepository;
         private GenericRepository<Stool> _stoolRepository;
         private GenericRepository<Medicine> _medicineRepository;
+        private GenericRepository<Medication> _medicationRepository;
         public GenericRepository<Dish> DishRepository
         {
             get
@@ -41,6 +42,18 @@ namespace PooPlanner.Domain.UnitsOfWork
                     this._medicineRepository = new GenericRepository<Medicine>(_context);
                 }
                 return this._medicineRepository;
+            }
+        }
+
+        public GenericRepository<Medication> MedicationRepository
+        {
+            get
+            {
+                if (this._medicationRepository == null)
+                {
+                    this._medicationRepository = new GenericRepository<Medication>(_context);
+                }
+                return this._medicationRepository;
             }
         }
 
