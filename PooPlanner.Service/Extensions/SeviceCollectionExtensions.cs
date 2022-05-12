@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using PooPlanner.Shared.Services;
+using PooPlanner.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,9 @@ namespace PooPlanner.Service.Extensions
     {
         public static IServiceCollection AddServiceLayer(this IServiceCollection services)
         {
-            return services.AddScoped<IFoodService, FoodService>();
+            services.AddScoped<IFoodService, FoodService>();
+            services.AddScoped<IMedicineService, MedicineService>();
+            return services;
         }
     }
 }

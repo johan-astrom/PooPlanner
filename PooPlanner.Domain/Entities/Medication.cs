@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PooPlanner.Domain.Entities
 {
-    public class Medication
+    public class Medication : EntityBase
     {
         public int Amount { get; set; }
         public DateTime TimeStamp { get; set; } 

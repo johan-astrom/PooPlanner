@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PooPlanner.Shared.DTO
 {
-    internal class MedicationDto
+    public class MedicationDto
     {
         public int Amount { get; set; }
         public DateTime TimeStamp { get; set; }

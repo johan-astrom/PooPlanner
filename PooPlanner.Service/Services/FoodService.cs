@@ -5,7 +5,7 @@ using PooPlanner.Domain.Entities;
 using PooPlanner.Domain.Repository;
 using PooPlanner.Domain.UnitsOfWork;
 
-namespace PooPlanner.Shared.Services
+namespace PooPlanner.Service.Services
 {
     internal class FoodService : IFoodService
     {
@@ -19,12 +19,12 @@ namespace PooPlanner.Shared.Services
 
         public IEnumerable<FoodGetDto> GetAll()
         {
-            return _mapper.Map<IEnumerable<FoodGetDto>>(_uow.DishRepository.GetAll());
+            return _mapper.Map<IEnumerable<FoodGetDto>>(_uow.DishRepository.GetAll(dish => dish.Allergenes));
         }
 
         public FoodGetDto GetById(long id)
         {
-            return _mapper.Map<FoodGetDto>(_uow.DishRepository.GetById(id));
+            return _mapper.Map<FoodGetDto>(_uow.DishRepository.GetById(id, dish => dish.Allergenes));
         }
 
         public FoodGetDto Create(FoodPostDto foodDto)

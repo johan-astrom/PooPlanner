@@ -9,8 +9,8 @@ namespace PooPlanner.Domain.Repository
 {
     public interface IGenericRepository<T> where T : class
     {
-        T GetById(long id);
-        IEnumerable<T> GetAll();
+        T GetById(long id, Expression<Func<T, object>> includeExpression);
+        IEnumerable<T> GetAll(Expression<Func<T, object>> includeExpression);
         IEnumerable<T> Find(Expression<Func<T, bool>> expression);
         T Add(T entity);
         void AddRange(IEnumerable<T> entities);

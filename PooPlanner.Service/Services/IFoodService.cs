@@ -1,7 +1,7 @@
 ﻿using PooPlanner.Domain.Entities;
 using PooPlanner.Shared.DTO;
 
-namespace PooPlanner.Shared.Services
+namespace PooPlanner.Service.Services
 {
     public interface IFoodService
     {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PooPlanner.Shared.DTO;
-using PooPlanner.Shared.Services;
+using PooPlanner.Service.Services;
 
 namespace PooPlanner.API.Controllers
 {
