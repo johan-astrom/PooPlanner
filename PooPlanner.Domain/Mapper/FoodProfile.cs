@@ -14,6 +14,7 @@ namespace PooPlanner.Domain.Mapper
             CreateMap<Allergene, string>().ConvertUsing(a => a.Name);//ForMember(dest => dest, opt => opt.MapFrom(src => src.Name));
 
             CreateMap<Medicine, MedicineGetDto>();
+            CreateMap<MedicinePostDto, Medicine>();
             CreateMap<Medication, MedicationDto>();
         }
     }

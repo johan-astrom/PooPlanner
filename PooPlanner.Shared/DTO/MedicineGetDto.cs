@@ -8,9 +8,9 @@ namespace PooPlanner.Shared.DTO
 {
     public class MedicineGetDto
     {
+        public long Id { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
-        public int Amount { get; set; }
         public string Unit { get; set; }
     }
 }

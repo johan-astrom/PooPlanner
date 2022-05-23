@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PooPlanner.Service.Services;
+using PooPlanner.Shared.DTO;
 
 namespace PooPlanner.API.Controllers
 {
@@ -26,6 +27,16 @@ namespace PooPlanner.API.Controllers
             return Ok(_service.GetMedicineById(id));    
         }
 
-
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public IActionResult CreateMedicine(MedicinePostDto medicine)
+        {
+            var createdMedicine = _service.CreateMedicine(medicine);
+            if (createdMedicine == null)
+            {
+                return BadRequest("Unable to create medicine.");
+            }
+            return CreatedAtAction(nameof(GetMedicineById), new { createdMedicine.Id}, createdMedicine);
+        }
     }
 }

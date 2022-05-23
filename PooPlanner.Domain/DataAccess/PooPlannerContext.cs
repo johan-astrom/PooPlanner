@@ -17,6 +17,7 @@ namespace PooPlanner.Domain.DataAccess
 
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Medicine> Medicines { get; set; }
+        public DbSet<Medication> Medications { get; set; }
         public DbSet<Stool> Stools { get; set; }
     }
 }

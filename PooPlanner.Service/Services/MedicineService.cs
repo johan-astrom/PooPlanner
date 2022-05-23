@@ -34,18 +34,5 @@ namespace PooPlanner.Service.Services
             return _mapper.Map<MedicineGetDto>(createdMedicine);
         }
 
-        public IEnumerable<MedicationDto> GetMedicationByTimestamp(DateTime startTime, DateTime endTime)
-        {
-            return _mapper.Map<IEnumerable<MedicationDto>>(_uow.MedicationRepository.GetAll().Where(m => m.TimeStamp >= startTime && m.TimeStamp <= endTime));
-        }
-
-        public IEnumerable<MedicationDto> GetAllMedications()
-        {
-            return _mapper.Map<IEnumerable<MedicationDto>>(_uow.MedicationRepository.GetAll());
-        }
-        public MedicationDto GetMedicationById(long id)
-        {
-            return _mapper.Map<MedicationDto>(_uow.MedicationRepository.GetById(id));
-        }
     }
 }

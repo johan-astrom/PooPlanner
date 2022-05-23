@@ -10,6 +10,6 @@ namespace PooPlanner.Domain.Entities
     {
         public int Amount { get; set; }
         public DateTime TimeStamp { get; set; } 
-        public Medicine MedicineId { get; set; }    
+        public long MedicineId { get; set; }    
     }
 }
