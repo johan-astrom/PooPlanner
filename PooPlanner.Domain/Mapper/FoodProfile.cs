@@ -11,11 +11,12 @@ namespace PooPlanner.Domain.Mapper
             CreateMap<FoodPostDto, Dish>();
             CreateMap<Dish, FoodGetDto>();
             CreateMap<string, Allergene>().ForMember(dest => dest.Name, opt => opt.MapFrom(src => src));
-            CreateMap<Allergene, string>().ConvertUsing(a => a.Name);//ForMember(dest => dest, opt => opt.MapFrom(src => src.Name));
-
+            CreateMap<Allergene, string>().ConvertUsing(a => a.Name);
             CreateMap<Medicine, MedicineGetDto>();
             CreateMap<MedicinePostDto, Medicine>();
-            CreateMap<Medication, MedicationDto>();
+
+            CreateMap<Medication, MedicationGetDto>().ForMember(dest => dest.Unit, opt => opt.MapFrom(src => src.Medicine.Unit));
+            CreateMap<MedicationPostDto, Medication>();
         }
     }
 }

@@ -31,9 +31,19 @@ namespace PooPlanner.Domain.Repository
             return _context.Set<TEntity>().Where(expression);
         }
 
-        public IEnumerable<TEntity> GetAll(Expression<Func<TEntity, object>>? includeExpression = null)
+        public IEnumerable<TEntity> GetAll()
+        {
+            return dbSet;
+        }
+
+        public IEnumerable<TEntity> GetAll(Expression<Func<TEntity, object>>? includeExpression)
         {
             return dbSet.Include(includeExpression);
+        }
+
+        public TEntity GetById(long id)
+        {
+            return dbSet.FirstOrDefault(e => e.Id == id);
         }
 
         public TEntity GetById(long id, Expression<Func<TEntity, object>>? includeExpression = null)

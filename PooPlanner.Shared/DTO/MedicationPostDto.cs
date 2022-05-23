@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace PooPlanner.Shared.DTO
 {
-    public class MedicationDto
+    public class MedicationPostDto
     {
         public int Amount { get; set; }
         public DateTime TimeStamp { get; set; }
+        public long MedicineId { get; set; }
     }
 }

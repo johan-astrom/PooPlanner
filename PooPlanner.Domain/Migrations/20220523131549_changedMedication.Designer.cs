@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PooPlanner.Domain.DataAccess;
 
@@ -11,9 +12,10 @@ using PooPlanner.Domain.DataAccess;
 namespace PooPlanner.Domain.Migrations
 {
     [DbContext(typeof(PooPlannerContext))]
-    partial class PooPlannerContextModelSnapshot : ModelSnapshot
+    [Migration("20220523131549_changedMedication")]
+    partial class changedMedication
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

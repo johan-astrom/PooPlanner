@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using PooPlanner.Domain.Entities;
 using PooPlanner.Domain.UnitsOfWork;
 using PooPlanner.Shared.DTO;
 using System;
@@ -9,29 +10,34 @@ using System.Threading.Tasks;
 
 namespace PooPlanner.Service.Services
 {
-    internal class MedicationService
+    public class MedicationService : IMedicationService
     {
-        private readonly UnitOfWork _uow;
+        private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
 
-        public MedicationService(UnitOfWork uow, IMapper mapper)
+        public MedicationService(IUnitOfWork uow, IMapper mapper)
         {
             _uow = uow;
             _mapper = mapper;
         }
 
-        public IEnumerable<MedicationDto> GetMedicationByTimestamp(DateTime startTime, DateTime endTime)
+        public IEnumerable<MedicationPostDto> GetMedicationByTimestamp(DateTime startTime, DateTime endTime)
         {
-            return _mapper.Map<IEnumerable<MedicationDto>>(_uow.MedicationRepository.GetAll().Where(m => m.TimeStamp >= startTime && m.TimeStamp <= endTime));
+            return _mapper.Map<IEnumerable<MedicationPostDto>>(_uow.MedicationRepository.GetAll().Where(m => m.TimeStamp >= startTime && m.TimeStamp <= endTime));
         }
 
-        public IEnumerable<MedicationDto> GetAllMedications()
+        public IEnumerable<MedicationGetDto> GetAllMedications()
         {
-            return _mapper.Map<IEnumerable<MedicationDto>>(_uow.MedicationRepository.GetAll());
+            return _mapper.Map<IEnumerable<MedicationGetDto>>(_uow.MedicationRepository.GetAll());
         }
-        public MedicationDto GetMedicationById(long id)
+        public MedicationGetDto GetMedicationById(long id)
         {
-            return _mapper.Map<MedicationDto>(_uow.MedicationRepository.GetById(id));
+            return _mapper.Map<MedicationGetDto>(_uow.MedicationRepository.GetById(id));
+        }
+
+        public MedicationGetDto CreateMedication(MedicationPostDto medicationDto)
+        {
+            return _mapper.Map<MedicationGetDto>(_uow.MedicationRepository.Add(_mapper.Map<Medication>(medicationDto)));
         }
     }
 }
