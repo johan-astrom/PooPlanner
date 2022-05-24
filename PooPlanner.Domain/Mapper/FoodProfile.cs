@@ -15,7 +15,9 @@ namespace PooPlanner.Domain.Mapper
             CreateMap<Medicine, MedicineGetDto>();
             CreateMap<MedicinePostDto, Medicine>();
 
-            CreateMap<Medication, MedicationGetDto>().ForMember(dest => dest.Unit, opt => opt.MapFrom(src => src.Medicine.Unit));
+            CreateMap<Medication, MedicationGetDto>()
+                .ForMember(dest => dest.Unit, opt => opt.MapFrom(src => src.Medicine.Unit))
+                .ForMember(dest => dest.Medicine, opt => opt.MapFrom(src => src.Medicine.Name));
             CreateMap<MedicationPostDto, Medication>();
         }
     }

@@ -27,7 +27,7 @@ namespace PooPlanner.API.Controllers
             return Ok(_service.GetMedicationById(id));
         }
 
-        [HttpGet("/getByTimestamp/{timestamp}")]
+        [HttpGet("/getByTimestamp")]
         public IActionResult GetMedicationByTimestamp(DateTime startTime, DateTime endTime){
             return Ok(_service.GetMedicationByTimestamp(startTime, endTime));
         }

@@ -7,6 +7,6 @@ namespace PooPlanner.Service.Services
         MedicationGetDto CreateMedication(MedicationPostDto medicationDto);
         IEnumerable<MedicationGetDto> GetAllMedications();
         MedicationGetDto GetMedicationById(long id);
-        IEnumerable<MedicationPostDto> GetMedicationByTimestamp(DateTime startTime, DateTime endTime);
+        IEnumerable<MedicationGetDto> GetMedicationByTimestamp(DateTime startTime, DateTime endTime);
     }
 }

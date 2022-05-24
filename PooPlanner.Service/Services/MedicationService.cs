@@ -21,23 +21,28 @@ namespace PooPlanner.Service.Services
             _mapper = mapper;
         }
 
-        public IEnumerable<MedicationPostDto> GetMedicationByTimestamp(DateTime startTime, DateTime endTime)
+        public IEnumerable<MedicationGetDto> GetMedicationByTimestamp(DateTime startTime, DateTime endTime)
         {
-            return _mapper.Map<IEnumerable<MedicationPostDto>>(_uow.MedicationRepository.GetAll().Where(m => m.TimeStamp >= startTime && m.TimeStamp <= endTime));
+            return _mapper.Map<IEnumerable<MedicationGetDto>>(_uow.MedicationRepository.GetAll().Where(m => m.TimeStamp >= startTime && m.TimeStamp <= endTime));
         }
 
         public IEnumerable<MedicationGetDto> GetAllMedications()
         {
-            return _mapper.Map<IEnumerable<MedicationGetDto>>(_uow.MedicationRepository.GetAll());
+            return _mapper.Map<IEnumerable<MedicationGetDto>>(_uow.MedicationRepository.GetAll(m => m.Medicine));
         }
         public MedicationGetDto GetMedicationById(long id)
         {
-            return _mapper.Map<MedicationGetDto>(_uow.MedicationRepository.GetById(id));
+            return _mapper.Map<MedicationGetDto>(_uow.MedicationRepository.GetById(id, m => m.Medicine));
         }
 
         public MedicationGetDto CreateMedication(MedicationPostDto medicationDto)
         {
-            return _mapper.Map<MedicationGetDto>(_uow.MedicationRepository.Add(_mapper.Map<Medication>(medicationDto)));
+            var medication = _mapper.Map<Medication>(medicationDto);
+            var medicine = _uow.MedicineRepository.GetById(medicationDto.MedicineId);
+            medication.Medicine = medicine;
+            _uow.MedicationRepository.Add(medication);
+            _uow.Save();
+            return _mapper.Map<MedicationGetDto>(medication);
         }
     }
 }

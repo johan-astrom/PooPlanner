@@ -12,8 +12,8 @@ using PooPlanner.Domain.DataAccess;
 namespace PooPlanner.Domain.Migrations
 {
     [DbContext(typeof(PooPlannerContext))]
-    [Migration("20220506111134_DishChanged")]
-    partial class DishChanged
+    [Migration("20220524091849_changedMedication")]
+    partial class changedMedication
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,7 +66,7 @@ namespace PooPlanner.Domain.Migrations
                     b.ToTable("Dishes");
                 });
 
-            modelBuilder.Entity("PooPlanner.Domain.Entities.Medicine", b =>
+            modelBuilder.Entity("PooPlanner.Domain.Entities.Medication", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -76,6 +76,27 @@ namespace PooPlanner.Domain.Migrations
 
                     b.Property<int>("Amount")
                         .HasColumnType("int");
+
+                    b.Property<long>("MedicineId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("TimeStamp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MedicineId");
+
+                    b.ToTable("Medications");
+                });
+
+            modelBuilder.Entity("PooPlanner.Domain.Entities.Medicine", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -118,6 +139,17 @@ namespace PooPlanner.Domain.Migrations
                     b.HasOne("PooPlanner.Domain.Entities.Dish", null)
                         .WithMany("Allergenes")
                         .HasForeignKey("DishId");
+                });
+
+            modelBuilder.Entity("PooPlanner.Domain.Entities.Medication", b =>
+                {
+                    b.HasOne("PooPlanner.Domain.Entities.Medicine", "Medicine")
+                        .WithMany()
+                        .HasForeignKey("MedicineId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Medicine");
                 });
 
             modelBuilder.Entity("PooPlanner.Domain.Entities.Dish", b =>
