@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.Shared", "PooPla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.Service", "PooPlanner.Service\PooPlanner.Service.csproj", "{6CA6A13A-19DF-4668-ADFD-3CA609A1452F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PooPlanner.API", "PooPlanner.API2\PooPlanner.API.csproj", "{56D1E70A-A465-4ADD-9C70-5D99F8ACFCAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.API", "PooPlanner.API\PooPlanner.API.csproj", "{9351BF82-0116-426D-8C40-A3855A401159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{6CA6A13A-19DF-4668-ADFD-3CA609A1452F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CA6A13A-19DF-4668-ADFD-3CA609A1452F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CA6A13A-19DF-4668-ADFD-3CA609A1452F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56D1E70A-A465-4ADD-9C70-5D99F8ACFCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56D1E70A-A465-4ADD-9C70-5D99F8ACFCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56D1E70A-A465-4ADD-9C70-5D99F8ACFCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56D1E70A-A465-4ADD-9C70-5D99F8ACFCAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9351BF82-0116-426D-8C40-A3855A401159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9351BF82-0116-426D-8C40-A3855A401159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9351BF82-0116-426D-8C40-A3855A401159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9351BF82-0116-426D-8C40-A3855A401159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
