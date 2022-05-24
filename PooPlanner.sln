@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{8A3B4609-38F0-4440-8948-EE53655CBEAE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlannerUI", "PooPlannerUI\PooPlannerUI.csproj", "{C8A5AE0A-637D-4AA5-A4D0-7D92BAD23676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.UI", "PooPlannerUI\PooPlanner.UI.csproj", "{C8A5AE0A-637D-4AA5-A4D0-7D92BAD23676}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.Domain", "PooPlanner.Domain\PooPlanner.Domain.csproj", "{A4330938-198C-4632-8A18-77635139470C}"
 EndProject
@@ -44,9 +42,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{C8A5AE0A-637D-4AA5-A4D0-7D92BAD23676} = {8A3B4609-38F0-4440-8948-EE53655CBEAE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB898491-384E-4B1D-9670-5E61D8812F8B}
