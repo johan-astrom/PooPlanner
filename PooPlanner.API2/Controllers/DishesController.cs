@@ -5,7 +5,7 @@ using PooPlanner.Service.Services;
 namespace PooPlanner.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/[controller]")]
     public class DishesController : ControllerBase
     {
         private readonly IFoodService _service;

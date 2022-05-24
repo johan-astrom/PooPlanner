@@ -15,6 +15,7 @@ namespace PooPlanner.Service.Extensions
             services.AddScoped<IFoodService, FoodService>();
             services.AddScoped<IMedicineService, MedicineService>();
             services.AddScoped<IMedicationService, MedicationService>();
+            services.AddScoped<IStoolService, StoolService>();
             return services;
         }
     }

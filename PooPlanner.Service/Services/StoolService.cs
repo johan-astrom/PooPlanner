@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PooPlanner.Service.Services
 {
-    public class StoolService
+    public class StoolService : IStoolService
     {
         private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
