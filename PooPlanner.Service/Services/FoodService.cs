@@ -17,17 +17,17 @@ namespace PooPlanner.Service.Services
             _uow = uow;
         }
 
-        public IEnumerable<FoodGetDto> GetAll()
+        public IEnumerable<FoodGetDto> GetAllDishes()
         {
             return _mapper.Map<IEnumerable<FoodGetDto>>(_uow.DishRepository.GetAll(dish => dish.Allergenes));
         }
 
-        public FoodGetDto GetById(long id)
+        public FoodGetDto GetDishById(long id)
         {
             return _mapper.Map<FoodGetDto>(_uow.DishRepository.GetById(id, dish => dish.Allergenes));
         }
 
-        public FoodGetDto Create(FoodPostDto foodDto)
+        public FoodGetDto CreateDish(FoodPostDto foodDto)
         {
             var dish = _mapper.Map<Dish>(foodDto);
             _uow.DishRepository.Add(dish);

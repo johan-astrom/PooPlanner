@@ -5,8 +5,8 @@ namespace PooPlanner.Service.Services
 {
     public interface IFoodService
     {
-        FoodGetDto GetById(long id);
-        IEnumerable<FoodGetDto> GetAll();
-        FoodGetDto Create(FoodPostDto foodDto);
+        FoodGetDto GetDishById(long id);
+        IEnumerable<FoodGetDto> GetAllDishes();
+        FoodGetDto CreateDish(FoodPostDto foodDto);
     }
 }

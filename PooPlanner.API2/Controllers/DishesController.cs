@@ -17,13 +17,13 @@ namespace PooPlanner.API.Controllers
         [HttpGet]
         public IActionResult GetAllDishes()
         {
-            return Ok(_service.GetAll());
+            return Ok(_service.GetAllDishes());
         }
 
         [HttpGet("{id}")]
         public IActionResult GetDishById(long id)
         {
-            var dish = _service.GetById(id);
+            var dish = _service.GetDishById(id);
             return Ok(dish);
         }
 
@@ -31,7 +31,7 @@ namespace PooPlanner.API.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         public IActionResult CreateDish(FoodPostDto dish)
         {
-            var createdDish = _service.Create(dish);
+            var createdDish = _service.CreateDish(dish);
             if (createdDish == null)
             {
                 return BadRequest("Unable to create dish");

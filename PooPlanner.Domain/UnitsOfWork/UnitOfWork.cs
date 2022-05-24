@@ -73,7 +73,7 @@ namespace PooPlanner.Domain.UnitsOfWork
         {
             if (!this.disposed)
             {
-                if (disposed)
+                if (disposing)
                 {
                     _context.Dispose();
                 }
