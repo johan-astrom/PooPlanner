@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Planner";
 }
+
 <h1>@ViewData["Title"]</h1>
 
 <table>
@@ -9,30 +10,18 @@
         <th>Size</th>
         <th>Allergenes</th>
     </tr>
-@foreach (var m in Model)
+    @foreach (var m in Model)
     {
-        <tr>
-        <td>@m.DishName</td>        
-        <td>@m.DishSize</td>       
-            <td>@for (var i = 0; i < m.DishAllergenes.Count; i++)
+            <tr>
+            <td>@m.DishName</td>        
+            <td>@m.DishSize</td>       
+                <td>@for (var i = 0; i < m.DishAllergenes.Count; i++)
                 {
-                    <p>@(m.DishAllergenes[i] + (i == (m.DishAllergenes.Count - 1) ? ", " : ""))</p>
+                            <p>@(m.DishAllergenes[i] + (i == (m.DishAllergenes.Count - 1) ? ", " : ""))</p>
                 }
-            </td>        
-        </tr>
+                </td>        
+            </tr>
     }
 </table>
 
-<form>
-    <h2>Register meal</h2>
-    <label for="dishName">Dish</label>
-    <input type="text" id="dishName" name="dishName"/>
-    <label for="dishSize">Dish size</label>
-    <select id="dishSize" name="dishSize">
-        <option value=0>Small</option>
-        <option value=1>Medium</option>
-        <option value=2>Large</option>
-    </select>
-    <label for="dishTimestamp">Time</label>
-    <input type="datetime-local" id="dishTimestamp" name="dishTimestamp" />
-</form>
+

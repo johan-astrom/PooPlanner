@@ -16,6 +16,7 @@ namespace PooPlanner.UI.Models
         public string DishSize { get; set; }
         [JsonProperty("Allergenes")]
         public List<string> DishAllergenes { get; set; }
+        public DateTime DishTimestamp { get; set; }
 
         public PlannerViewModel()
         {

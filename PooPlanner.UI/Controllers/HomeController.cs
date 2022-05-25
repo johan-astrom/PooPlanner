@@ -15,11 +15,13 @@ namespace PooPlannerUI.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
+        [HttpGet]
         public async Task<IActionResult> Planner()
         {
             List<PlannerViewModel> viewModels = new();
@@ -32,6 +34,20 @@ namespace PooPlannerUI.Controllers
             }
 
             return View(viewModels);
+        }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            PlannerViewModel viewModel = new();
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult AddAllergene(PlannerViewModel viewModel, string allergene)
+        {
+            viewModel.DishAllergenes.Add(allergene);
+            return View("Register", viewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
