@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.UI", "PooPlannerUI\PooPlanner.UI.csproj", "{C8A5AE0A-637D-4AA5-A4D0-7D92BAD23676}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.Domain", "PooPlanner.Domain\PooPlanner.Domain.csproj", "{A4330938-198C-4632-8A18-77635139470C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.Shared", "PooPlanner.Shared\PooPlanner.Shared.csproj", "{CFBF22BD-28D8-48D2-977C-B247BA1997E7}"
@@ -13,16 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.Service", "PooPl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.API", "PooPlanner.API\PooPlanner.API.csproj", "{9351BF82-0116-426D-8C40-A3855A401159}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PooPlanner.UI", "PooPlanner.UI\PooPlanner.UI.csproj", "{54612572-77B2-4FF9-9A4F-756B7AAD757E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C8A5AE0A-637D-4AA5-A4D0-7D92BAD23676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8A5AE0A-637D-4AA5-A4D0-7D92BAD23676}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8A5AE0A-637D-4AA5-A4D0-7D92BAD23676}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8A5AE0A-637D-4AA5-A4D0-7D92BAD23676}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A4330938-198C-4632-8A18-77635139470C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A4330938-198C-4632-8A18-77635139470C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4330938-198C-4632-8A18-77635139470C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{9351BF82-0116-426D-8C40-A3855A401159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9351BF82-0116-426D-8C40-A3855A401159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9351BF82-0116-426D-8C40-A3855A401159}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54612572-77B2-4FF9-9A4F-756B7AAD757E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54612572-77B2-4FF9-9A4F-756B7AAD757E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54612572-77B2-4FF9-9A4F-756B7AAD757E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54612572-77B2-4FF9-9A4F-756B7AAD757E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

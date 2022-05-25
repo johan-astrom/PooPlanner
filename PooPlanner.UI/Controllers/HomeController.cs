@@ -18,7 +18,7 @@ namespace PooPlannerUI.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Planner()
         {
             return View();
         }
