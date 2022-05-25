@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "PooPlanner.API2": {
+    "PooPlanner.API": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

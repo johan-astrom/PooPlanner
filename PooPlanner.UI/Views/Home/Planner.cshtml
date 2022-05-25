@@ -3,4 +3,22 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Planner</p>
+<table>
+    <tr>
+        <th>Dish</th>
+        <th>Size</th>
+        <th>Allergenes</th>
+    </tr>
+@foreach (var m in Model)
+    {
+        <tr>
+        <td>@m.DishName</td>        
+        <td>@m.DishSize</td>       
+            <td>@for (var i = 0; i < m.DishAllergenes.Count; i++)
+                {
+                    <p>@m.DishAllergenes[i] + (i == m.DishAllergenes.Length - 1) ? ", " : ""</p>
+                }
+            </td>        
+        </tr>
+    }
+</table>

@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using PooPlanner.UI.Models;
 using PooPlannerUI.Models;
 using System.Diagnostics;
 
@@ -18,9 +20,17 @@ namespace PooPlannerUI.Controllers
             return View();
         }
 
-        public IActionResult Planner()
+        public async Task<IActionResult> Planner()
         {
-            return View();
+            List<PlannerViewModel> viewModels = new();
+            using var client = new HttpClient();
+            using (var response = await client.GetAsync("https://localhost:7073/api/dishes"))
+            {
+                string reponseJson = await response.Content.ReadAsStringAsync();
+                viewModels = JsonConvert.DeserializeObject<List<PlannerViewModel>>(reponseJson);
+            }
+
+            return View(viewModels);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
