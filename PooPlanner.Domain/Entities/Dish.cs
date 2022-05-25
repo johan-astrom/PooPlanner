@@ -9,6 +9,7 @@ namespace PooPlanner.Domain.Entities
         public string DishName { get; set; }
         public DishSize DishSize { get; set; }
         public List<Allergene> Allergenes { get; set; }
+        public DateTime Timestamp { get; set; }
 
         public Dish()
         {
