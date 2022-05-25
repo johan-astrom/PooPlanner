@@ -26,8 +26,9 @@ namespace PooPlannerUI.Controllers
             using var client = new HttpClient();
             using (var response = await client.GetAsync("https://localhost:7073/api/dishes"))
             {
-                string reponseJson = await response.Content.ReadAsStringAsync();
-                viewModels = JsonConvert.DeserializeObject<List<PlannerViewModel>>(reponseJson);
+                string responseJson = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseJson);
+                viewModels = JsonConvert.DeserializeObject<List<PlannerViewModel>>(responseJson);
             }
 
             return View(viewModels);
