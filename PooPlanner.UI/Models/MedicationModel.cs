@@ -1,10 +1,20 @@
-﻿namespace PooPlanner.UI.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace PooPlanner.UI.Models
 {
     public class MedicationModel
     {
-        public int MedicationAmount { get; set; }
-        public DateTime MedicationTimestamp { get; set; }
-        public string MedicineName { get; set; }
-        public string MedicineUnit { get; set; }
+        [Display(Name ="Amount")]
+        public int Amount { get; set; }
+
+        [Display(Name ="Date and time")]
+        public DateTime Timestamp { get; set; }
+
+        [Display(Name = "Medicine")]
+        public int MedicineId { get; set; }
+
+        [Display(Name = "Medicine")]
+        public MedicineModel SelectedMedicine { get; set; } 
     }
+
 }
