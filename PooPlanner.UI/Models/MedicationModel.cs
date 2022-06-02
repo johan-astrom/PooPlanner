@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace PooPlanner.UI.Models
 {
@@ -12,6 +13,12 @@ namespace PooPlanner.UI.Models
 
         [Display(Name = "Medicine")]
         public int MedicineId { get; set; }
+
+        [JsonProperty(PropertyName = "Medicine")]
+        public int MedicineName { get; set; }
+
+        [JsonProperty(PropertyName = "Unit")]
+        public string MedicineUnit { get; set; }
 
         [Display(Name = "Medicine")]
         public MedicineModel SelectedMedicine { get; set; } 

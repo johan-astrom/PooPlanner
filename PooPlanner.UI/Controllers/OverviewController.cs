@@ -6,19 +6,16 @@ namespace PooPlanner.UI.Controllers
 {
     public class OverviewController : Controller
     {
-        private readonly HttpClient _httpClient;
+        private readonly HttpClient _httpClient = new();
         private readonly string _url = "https://localhost:7073/api";
 
-        public async IActionResult Index(OverviewViewModel viewModel)
+        public async Task<IActionResult> Index(OverviewViewModel viewModel)
         {
             viewModel.Stools = await GetStools();
             viewModel.Dishes = await GetDishes();   
+            viewModel.Medications = await GetMedications();
 
-            var medicationEndpoint = _url + "/medication";
-            using var result = await _httpClient.GetAsync(medicationEndpoint);
-
-
-            return View();
+            return View(viewModel);
         }
 
         private async Task<List<StoolModel>> GetStools()
