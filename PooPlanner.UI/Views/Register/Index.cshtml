@@ -1,0 +1,46 @@
+﻿@using PooPlanner.UI.Models
+@model PooPlanner.UI.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+@*@using (Html.BeginForm("Register", "Home", FormMethod.Post))
+{
+    <h2>Register meal</h2>
+    @Html.LabelFor(m => m.DishName)
+    @Html.TextBoxFor(m => m.DishName)
+    <label for="dishSize">Dish size</label>
+    <select id="dishSize" name="dishSize">
+        <option value=0>Small</option>
+        <option value=1>Medium</option>
+        <option value=2>Large</option>
+    </select>
+    <!--label for="dishTimestamp">Time</label-->
+    <!--input type="datetime-local" id="dishTimestamp" name="dishTimestamp" /-->
+    @Html.TextBoxFor(m => m.DishTimestamp)
+}
+@using (Html.BeginForm("AddAllergene", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.NewDishAllergene)
+    @Html.TextBoxFor(m => m.NewDishAllergene)
+    <button>Add allergene</button>
+}
+<ul>
+    @foreach (var allergene in Model.DishAllergenes)
+    {
+        <li>@allergene</li>
+    }
+</ul>*@
+
+@using (Html.BeginForm("RegisterStool", "Register", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Stool.Timestamp)
+    @Html.TextBoxFor(m => m.Stool.Timestamp)
+    @Html.LabelFor(m => m.Stool.Size)
+    @Html.DropDownListFor(m => m.Stool.Size, new SelectList(Enum.GetValues(typeof(StoolSize)), "Select stool size"))
+    @Html.LabelFor(m => m.Stool.Consistency)
+    @Html.DropDownListFor(m => m.Stool.Consistency, new SelectList(Enum.GetValues(typeof(StoolConsistency)), "Select stool consistency"))
+
+    <input type="submit" name="saveStool" value="Save stool"/>
+}

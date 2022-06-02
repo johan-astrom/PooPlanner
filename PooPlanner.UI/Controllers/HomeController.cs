@@ -24,31 +24,18 @@ namespace PooPlannerUI.Controllers
         [HttpGet]
         public async Task<IActionResult> Planner()
         {
-            List<PlannerViewModel> viewModels = new();
+            List<DishModel> viewModels = new();
             using var client = new HttpClient();
             using (var response = await client.GetAsync("https://localhost:7073/api/dishes"))
             {
                 string responseJson = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseJson);
-                viewModels = JsonConvert.DeserializeObject<List<PlannerViewModel>>(responseJson);
+                viewModels = JsonConvert.DeserializeObject<List<DishModel>>(responseJson);
             }
 
             return View(viewModels);
         }
 
-        [HttpGet]
-        public IActionResult Register()
-        {
-            PlannerViewModel viewModel = new();
-            return View(viewModel);
-        }
-
-        [HttpPost]
-        public IActionResult AddAllergene(PlannerViewModel viewModel, string allergene)
-        {
-            viewModel.DishAllergenes.Add(allergene);
-            return View("Register", viewModel);
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
